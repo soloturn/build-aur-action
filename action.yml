@@ -1,4 +1,4 @@
-name: 'Build AUR Package'
+name: 'Build AUR package with yay'
 description: 'Test build an AUR package in Docker container'
 branding:
   icon: user-check
