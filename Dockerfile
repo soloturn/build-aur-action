@@ -1,7 +1,5 @@
 FROM archlinux:latest AS arch
 RUN pacman -Syu base-devel git --noconfirm && sed -i '/E_ROOT/d' /usr/bin/makepkg
-RUN mv /usr/include/bits/stdlib.h /tmp
-RUN perl -n -i -e 'print unless m-bits/stdlib.h-' /usr/include/stdlib.h
 RUN useradd -m -G wheel -s /bin/bash build
 RUN perl -i -pe 's/# (%wheel ALL=\(ALL\) NOPASSWD: ALL)/$1/' /etc/sudoers
 USER build
