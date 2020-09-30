@@ -1,8 +1,11 @@
 # build-aur-action
+The action uses ubuntu to run the latest arch linux docker
+image, install [yay](https://github.com/Jguer/yay) into it,
+then build the package specified.
 
 ## Example usage
 ```yaml
-uses: DuckSoft/build-aur-action@master
+uses: soloturn/build-aur-action@master
 with:
   repo-name: qv2ray-dev-git
 ```
