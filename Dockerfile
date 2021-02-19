@@ -5,8 +5,8 @@ RUN perl -i -pe 's/# (%wheel ALL=\(ALL\) NOPASSWD: ALL)/$1/' /etc/sudoers
 USER build
 #RUN cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 # https://bbs.archlinux.org/viewtopic.php?id=229027, eli schwartz
-RUN cd /tmp && git clone https://aur.archlinux.org/yay.git
-RUN cd yay && source PKGBUILD && pacman -Syu --noconfirm && pacman -S --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
+RUN cd /tmp && git clone https://aur.archlinux.org/paru.git
+RUN cd paru && source PKGBUILD && pacman -Syu --noconfirm && pacman -S --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
 
 USER root
 COPY entrypoint.sh /entrypoint.sh
